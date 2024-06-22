@@ -4300,9 +4300,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.25
-    functionName: CreateFireBall
+    functionName: CreateSpell
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 3083101438119348924, guid: 85c2ab2b0e532f3429ab92ca21f2730e, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

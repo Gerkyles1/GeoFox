@@ -4440,9 +4440,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.65
-    functionName: CreateLightning
+    functionName: CreateSpell
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 884159116018133334, guid: fefe9464530283a43b4656df2fa2b893, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

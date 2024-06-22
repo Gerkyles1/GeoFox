@@ -15,16 +15,28 @@ namespace Spells
         {
             transform.Translate((_direction >= 0 ? Vector2.right : Vector2.left) * _speed * Time.deltaTime);
         }
+        public override void InitialiseSpell(Vector2 position, int direction)
+        {
+            transform.position = position;
+            SetSpellDirection(direction);
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag == "Enemy")
+            {
+                collision.GetComponent<EnemyController>().Damage(_damage);
+
+                GameObject vfx = Instantiate(_fireBallVfx);
+                vfx.transform.position = collision.ClosestPoint(transform.position);
+
+                Destroy(vfx, 1f);
+                Destroy(gameObject);
+            }
+        }
         public void SetSpellDirection(int direction)
         {
             _direction = direction >= 0 ? 1 : -1;
             transform.localScale = new Vector2(_direction * Math.Abs(transform.localScale.x), transform.localScale.y);
-        }
-
-        public void SetFireBallDirection(int direction, int speed)
-        {
-            SetSpellDirection(direction);
-            _speed = speed > 0 ? speed : 10;
         }
 
         public void SetDamage(int damage)
@@ -39,18 +51,6 @@ namespace Spells
             return _damage;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.tag == "Enemy")
-            {
-                collision.GetComponent<EnemyController>().Damage(_damage);
 
-                GameObject vfx = Instantiate(_fireBallVfx);
-                vfx.transform.position = collision.ClosestPoint(transform.position);
-
-                Destroy(vfx, 1f);
-                Destroy(gameObject);
-            }
-        }
     }
 }

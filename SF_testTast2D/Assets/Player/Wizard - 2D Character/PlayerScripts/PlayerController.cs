@@ -12,11 +12,11 @@ namespace PlayerScripts
         public static bool _playerAlive = true;
 
         [SerializeField] private GameObject firePoint;
-
-        [SerializeField] private GameObject fireBallSpellPrefab;
-        [SerializeField] private GameObject lightningSpellPrefab;
-
         [SerializeField] private Slider hpBar;
+        [SerializeField] private string _activeSpellAnimatorTriger = "FireBallSpell";
+        public void SetActiveSpellAnimatorTriger(string triger) => _activeSpellAnimatorTriger = triger;
+
+
 
 
         private Animator _playerAnimator;
@@ -35,13 +35,16 @@ namespace PlayerScripts
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     SetPlayerDirection(-1);
-                    _playerAnimator.SetTrigger("FireBallSpell");
+                    //_playerAnimator.SetTrigger(ActoveSpellController._activeSpellPrefab.GetComponent<Spell>()._AnimatorTriger);
+                    _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
                 }
                 else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     SetPlayerDirection(1);
-                    _playerAnimator.SetTrigger("LightningSpell");
+                    //_playerAnimator.SetTrigger(ActoveSpellController._activeSpellPrefab.GetComponent<Spell>()._AnimatorTriger);
+                    _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
                 }
+
             }
         }
 
@@ -61,18 +64,10 @@ namespace PlayerScripts
             }
         }
 
-        private void CreateFireBall()
+        private void CreateSpell(GameObject SpellPrefab)
         {
-            FireBallSpell fireBall = Instantiate(fireBallSpellPrefab).GetComponent<FireBallSpell>();
-            fireBall.transform.position = firePoint.transform.position;
-            fireBall.SetSpellDirection(_currentDirection);
-        }
-
-        private void CreateLightning()
-        {
-            LightningSpell lightningSpell = Instantiate(lightningSpellPrefab).GetComponent<LightningSpell>();
-            lightningSpell.transform.position = firePoint.transform.position;
-            lightningSpell.SetSpellDirection(_currentDirection);
+            Spell spell = Instantiate(SpellPrefab).GetComponent<Spell>();
+            spell.InitialiseSpell(firePoint.transform.position, _currentDirection);
         }
         private void TakeDamage(int damage)
         {
@@ -89,7 +84,6 @@ namespace PlayerScripts
         private void OnDestroy()
         {
             EnemyController.EnemyAttackPlayer -= TakeDamage;
-
         }
     }
 }

@@ -5,12 +5,13 @@ namespace Spells
 {
     public abstract class Spell : MonoBehaviour
     {
-        [SerializeField] private string _AnimatorTriger;
-        [SerializeField] private float _lifeTime;
+        [SerializeField] public string _AnimatorTriger;
+        [SerializeField] public float _lifeTime;
 
         private void Start()
         {
             Destroy(gameObject, _lifeTime);
         }
+        public abstract void InitialiseSpell(Vector2 position, int direction);
     }
 }

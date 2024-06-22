@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 131953338265002168}
   - component: {fileID: 794333503428356019}
-  - component: {fileID: 5056508172118968505}
   - component: {fileID: -531807525310852282}
+  - component: {fileID: 5056508172118968505}
   m_Layer: 0
   m_Name: lightning ball
   m_TagString: Untagged
@@ -86,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5056508172118968505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884159116018133334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2eacab572f75834ba475be8ac2a5de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AnimatorTriger: LightningSpell
-  _lifeTime: 2
-  _damage: 5
-  _speed: 20
-  _effects: {fileID: 2212147968568538816, guid: 40a690400e595ac4c92cfc8cdb6a9b96, type: 3}
 --- !u!70 &-531807525310852282
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +121,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.5}
   m_Size: {x: 20, y: 7}
   m_Direction: 1
+--- !u!114 &5056508172118968505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884159116018133334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eacab572f75834ba475be8ac2a5de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AnimatorTriger: LightningSpell
+  _lifeTime: 2
+  _damage: 5
+  _speed: 20
+  _effects: {fileID: 2212147968568538816, guid: 40a690400e595ac4c92cfc8cdb6a9b96, type: 3}

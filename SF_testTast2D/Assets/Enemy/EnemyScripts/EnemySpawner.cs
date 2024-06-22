@@ -32,12 +32,13 @@ namespace EnemyScripts
     {
         [SerializeField] private List<Level> _levels;
         private List<Wave> _waves;
+        public bool _waveEnd { get; private set; } = false;
 
         private int _currentWaveIndex = 0;
         private void Start()
         {
-            //_waves = _levels[MeinMenuScripts.StartGame._choosedLevel-1].waves;
-            _waves = _levels[0].waves;
+            _waves = _levels[MeinMenuScripts.StartGame._choosedLevel - 1].waves;
+
 
             WaveController.OnStartNewWave += NewWave;
 
@@ -46,6 +47,7 @@ namespace EnemyScripts
 
         public void NewWave()
         {
+            _waveEnd = false;
             StartCoroutine(CallWave());
         }
 
@@ -60,6 +62,7 @@ namespace EnemyScripts
                 for (int i = 0; i < enemy.count; i++)
                 {
                     Instantiate(enemy.enemyPrefab, transform);
+                    WaveController._enemyCount++;
                     yield return new WaitForSeconds(enemy.spawnRate);
 
 
@@ -67,11 +70,13 @@ namespace EnemyScripts
                 yield return new WaitForSeconds(enemy.waitAfterMiniWave);
 
             }
+            _waveEnd = true;
             _currentWaveIndex++;
         }
         private void OnDestroy()
         {
             WaveController.OnStartNewWave -= NewWave;
         }
+
     }
 }

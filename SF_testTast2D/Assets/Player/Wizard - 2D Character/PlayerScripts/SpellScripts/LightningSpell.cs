@@ -27,12 +27,6 @@ namespace Spells
             transform.localScale = new Vector2(_direction * Math.Abs(transform.localScale.x), transform.localScale.y);
         }
 
-        public void SetFireBallDirection(int direction, int speed)
-        {
-            SetSpellDirection(direction);
-            _speed = speed > 0 ? speed : 10;
-        }
-
         public void SetDamage(int damage)
         {
             if (damage != 0)
@@ -62,7 +56,11 @@ namespace Spells
                 Destroy(gameObject);
             }
         }
-
+        public override void InitialiseSpell(Vector2 position, int direction)
+        {
+            transform.position = position;
+            SetSpellDirection(direction);
+        }
 
     }
 }

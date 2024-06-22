@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4274beb9b32c9b145b4cfad4072a942f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimatorTriger: 
+  _AnimatorTriger: FireBallSpell
   _lifeTime: 1
   _damage: 2
   _fireBallVfx: {fileID: 7455963741130842361, guid: b03265407881ce04d93910810d0e26d1, type: 3}
+  _speed: 10
