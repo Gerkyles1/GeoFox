@@ -115,7 +115,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.3, y: 0.05}
@@ -133,4 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4274beb9b32c9b145b4cfad4072a942f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AnimatorTriger: 
+  _lifeTime: 1
   _damage: 2
+  _fireBallVfx: {fileID: 7455963741130842361, guid: b03265407881ce04d93910810d0e26d1, type: 3}
