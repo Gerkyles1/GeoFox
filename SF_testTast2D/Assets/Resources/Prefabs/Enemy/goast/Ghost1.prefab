@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3141927668763043673}
   - component: {fileID: 4577451331369599190}
   - component: {fileID: 4574285361274283413}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6974874016921281988}
   - component: {fileID: 6822009793856944531}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 31102360322117046}
   - component: {fileID: 2735147221277236679}
   - component: {fileID: 8594775958819222737}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 3754436065234439827}
   - component: {fileID: 3754436065234439836}
   - component: {fileID: 1705858250346811944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ghost1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3955679323644021775}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2676531856468251638}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 2008404946545222625}
   - component: {fileID: 3327452725214329778}
   - component: {fileID: 6682699431823241191}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 8448622252067648066}
   - component: {fileID: 8301318717806120955}
   - component: {fileID: 4025400007800423073}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3985112074939541051}
   - component: {fileID: 7042027239093765584}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ground
   m_TagString: Enemy
   m_Icon: {fileID: 0}

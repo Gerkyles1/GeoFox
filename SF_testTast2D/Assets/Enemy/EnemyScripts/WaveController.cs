@@ -1,4 +1,5 @@
 using System;
+using UIScripts;
 using UnityEngine;
 
 namespace EnemyScripts
@@ -7,11 +8,11 @@ namespace EnemyScripts
     {
         public static event Action OnStartNewWave;
 
-        public static event Action OnEndNewWave;
         [SerializeField] private GameObject _newWaveButton;
 
 
         static public int _enemyCount = 0;
+        private void ResetEnemyCount()=>_enemyCount = 0;
 
 
         [SerializeField] private EnemySpawner[] _spawners;
@@ -19,7 +20,10 @@ namespace EnemyScripts
         private void Start()
         {
             EnemyController.OnEnemyDied += DecEnemyCount;
+            UIController.SceneReload += ResetEnemyCount;
             InvokeRepeating("CheckEndWave", 2f, 2f);
+
+
         }
 
         public void StartWave()
@@ -33,10 +37,6 @@ namespace EnemyScripts
             CheckEndWave();
         }
 
-        private void OnDestroy()
-        {
-            EnemyController.OnEnemyDied -= DecEnemyCount;
-        }
         private void CheckEndWave()
         {
             if (_enemyCount == 0)
@@ -47,6 +47,12 @@ namespace EnemyScripts
 
                 _newWaveButton.SetActive(true);
             }
+        }
+        private void OnDestroy()
+        {
+            EnemyController.OnEnemyDied -= DecEnemyCount;
+            UIController.SceneReload -= ResetEnemyCount;
+
         }
     }
 }
