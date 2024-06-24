@@ -35,13 +35,11 @@ namespace PlayerScripts
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     SetPlayerDirection(-1);
-                    //_playerAnimator.SetTrigger(ActoveSpellController._activeSpellPrefab.GetComponent<Spell>()._AnimatorTriger);
                     _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
                 }
                 else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     SetPlayerDirection(1);
-                    //_playerAnimator.SetTrigger(ActoveSpellController._activeSpellPrefab.GetComponent<Spell>()._AnimatorTriger);
                     _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
                 }
 

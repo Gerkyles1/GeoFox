@@ -135,6 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AnimatorTriger: LightningSpell
   _lifeTime: 2
+  _level: 1
+  _costScale: 5
+  _nameStatToUpgrade: Damage
   _damage: 5
   _speed: 20
   _effects: {fileID: 2212147968568538816, guid: 40a690400e595ac4c92cfc8cdb6a9b96, type: 3}

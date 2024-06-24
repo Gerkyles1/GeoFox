@@ -135,6 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AnimatorTriger: FireBallSpell
   _lifeTime: 1
+  _level: 1
+  _costScale: 5
+  _nameStatToUpgrade: Damage
   _damage: 2
   _fireBallVfx: {fileID: 7455963741130842361, guid: b03265407881ce04d93910810d0e26d1, type: 3}
   _speed: 10

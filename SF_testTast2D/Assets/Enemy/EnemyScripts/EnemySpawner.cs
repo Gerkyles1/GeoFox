@@ -77,6 +77,5 @@ namespace EnemyScripts
         {
             WaveController.OnStartNewWave -= NewWave;
         }
-
     }
 }

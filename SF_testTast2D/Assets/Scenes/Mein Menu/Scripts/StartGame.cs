@@ -5,7 +5,7 @@ namespace MeinMenuScripts
 {
     public class StartGame : MonoBehaviour
     {
-        public static int _choosedLevel { get; private set; } = 1;
+        public static int _choosedLevel { get; private set; }
         private int _locationNumber = 1;
         public void StartLevel(int level)
         {

@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,9 +12,10 @@ namespace MeinMenuScripts
         {
             TextMeshProUGUI _childrenTMP = GetComponentInChildren<TextMeshProUGUI>();
             _childrenTMP.text = gameObject.name;
+            Debug.Log("initbutton " + Convert.ToInt16(_childrenTMP.text));
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                GetComponentInParent<StartGame>().StartLevel(Convert.ToInt16(_childrenTMP));
+                GetComponentInParent<StartGame>().StartLevel(Convert.ToInt16(_childrenTMP.text));
             });
         }
     }

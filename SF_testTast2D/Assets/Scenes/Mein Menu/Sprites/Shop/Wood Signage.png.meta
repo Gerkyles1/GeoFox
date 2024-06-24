@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a68e52b2eafbe6a4abc5691f92d7d550
+guid: 411db0e9f8b14f94aba7de27c1e3bff9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Wood Signage_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1383
+        width: 482
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86268f935b0a6fe4fbf705ee397c63bb
+      internalID: -1777550531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Signage_1
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1379
+        width: 974
+        height: 669
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db23da46e583d214b96fc6935d787e37
+      internalID: 1710976597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Signage_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 804
+        width: 730
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4669b543f409bb45b528e5c00ab33fc
+      internalID: -328663109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Signage_3
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 848
+        width: 804
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ede67564f61d15439b2c166bbc553a4
+      internalID: -1864578207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Signage_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 2011
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 140, z: 27, w: 26}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908cc99a69d5cf042b986d3040404aa7
+      internalID: -1992647115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wood Signage_0: -1777550531
+      Wood Signage_1: 1710976597
+      Wood Signage_2: -328663109
+      Wood Signage_3: -1864578207
+      Wood Signage_4: -1992647115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

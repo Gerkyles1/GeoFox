@@ -12,6 +12,7 @@ namespace UIScripts
         [SerializeField] private Text textCounter;
         private int _enemyCounter = 0;
         [SerializeField] private GameObject replayMenu;
+        [SerializeField] private GameObject _learn;
 
         public static event Action SceneReload;
         void Start()
@@ -19,6 +20,7 @@ namespace UIScripts
             EnemyController.OnEnemyDied += OneMoreEnemyDeated;
             PlayerController.OnPlayerDied += ShowReplayMenu;
             textCounter.text = "Score: " + _enemyCounter;
+            _learn.SetActive(true);
         }
 
         private void ShowReplayMenu()

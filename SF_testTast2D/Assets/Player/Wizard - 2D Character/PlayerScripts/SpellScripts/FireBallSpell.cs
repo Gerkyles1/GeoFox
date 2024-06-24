@@ -51,6 +51,11 @@ namespace Spells
             return _damage;
         }
 
+        public override void GetStats(ref string oldStat, ref string newStat)
+        {
+            oldStat = _damage.ToString();
+            newStat = _damage.ToString();
 
+        }
     }
 }
