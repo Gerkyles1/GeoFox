@@ -7,11 +7,11 @@ namespace MeinMenuScripts
 {
     public class LoadScene : MonoBehaviour
     {
-        [SerializeField] private Scene scene;
+        [SerializeField] private string scene;
         private void Start()
         {
             Button button = GetComponent<Button>();
-            button.onClick.AddListener(() => SceneManager.LoadScene(scene.name));
+            button.onClick.AddListener(() => SceneManager.LoadScene(scene));
         }
     }
 }

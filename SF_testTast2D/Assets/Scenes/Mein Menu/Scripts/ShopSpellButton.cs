@@ -27,7 +27,15 @@ namespace MeinMenuScripts
             {
                 showUpgrateSpellData();
                 _upgrateButton.GetComponent<Button>().onClick.RemoveAllListeners();
-                _upgrateButton.GetComponent<Button>().onClick.AddListener(() => { });
+                _upgrateButton.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    if (SavesController.coinsCount >= ((_spellPrefab._level + 1) * _spellPrefab._costScale))
+                    {
+                        SavesController.coinsCount -= (int)((_spellPrefab._level + 1) * _spellPrefab._costScale);
+                        _spellPrefab.UpgrateSpell();
+                        showUpgrateSpellData();
+                    }
+                });
 
             });
 
@@ -38,11 +46,11 @@ namespace MeinMenuScripts
         private void showUpgrateSpellData()
         {
             _spellImage.sprite = transform.Find("spell").GetComponent<Image>().sprite;
+
             _lvlOld.text = _spellPrefab._level.ToString();
             _lvlNew.text = (_spellPrefab._level + 1).ToString();
+
             _statName.text = _spellPrefab._nameStatToUpgrade;
-
-
             string old = "", New = ""; _spellPrefab.GetStats(ref old, ref New);
             _statOld.text = old;
             _statNew.text = New;

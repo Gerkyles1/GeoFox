@@ -136,7 +136,7 @@ MonoBehaviour:
   _AnimatorTriger: LightningSpell
   _lifeTime: 2
   _level: 1
-  _costScale: 5
+  _costScale: 10
   _nameStatToUpgrade: Damage
   _damage: 5
   _speed: 20

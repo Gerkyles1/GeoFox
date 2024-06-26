@@ -10,6 +10,7 @@ namespace MeinMenuScripts
         public static void StartLevel(int level)
         {
             _choosedLevel = level;
+            Debug.Log("Start Level " + _choosedLevel);
             SceneManager.LoadScene(_locationNumber.ToString());
         }
         public static void StartNextLevel()

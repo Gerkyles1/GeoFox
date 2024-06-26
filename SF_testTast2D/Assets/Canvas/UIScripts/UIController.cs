@@ -2,7 +2,6 @@ using EnemyScripts;
 using MeinMenuScripts;
 using PlayerScripts;
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +10,7 @@ namespace UIScripts
 {
     public class UIController : MonoBehaviour
     {
-        [SerializeField] private Text textCounter;
+        [SerializeField] private Text _score;
         [SerializeField] private GameObject _endLevelScreen;
         [SerializeField] private GameObject _learn;
         [SerializeField] private GameObject _winScreen;
@@ -24,7 +23,7 @@ namespace UIScripts
             EnemyController.OnEnemyDied += OneMoreEnemyDeated;
             PlayerController.OnPlayerDied += PlayerLose;
             WaveController.OnPlayerWin += PlayerWin;
-            textCounter.text = "Score: " + _enemyCounter;
+            _score.text = "Score: " + _enemyCounter;
             _learn.SetActive(true);
         }
 
@@ -49,7 +48,7 @@ namespace UIScripts
         private void OneMoreEnemyDeated()
         {
             _enemyCounter++;
-            textCounter.text = "Score: " + _enemyCounter;
+            _score.text = "Score: " + _enemyCounter;
         }
         public void Next()
         {

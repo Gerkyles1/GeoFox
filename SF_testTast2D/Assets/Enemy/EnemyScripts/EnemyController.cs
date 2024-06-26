@@ -1,3 +1,4 @@
+using MeinMenuScripts;
 using PlayerScripts;
 using Spells;
 using System;
@@ -16,6 +17,7 @@ namespace EnemyScripts
         [SerializeField] private float _attackRange = 1f;
         [SerializeField] private int _damage = 1;
         [SerializeField] private int _hp = 3;
+        [SerializeField] private int _coinsForKill = 1;
         [SerializeField] private Slider _hpBar;
         [SerializeField] private GameObject _ground;
 
@@ -75,8 +77,10 @@ namespace EnemyScripts
             }
         }
 
+
         private void Die()
         {
+            SavesController.coinsCount += _coinsForKill;
             Destroy(gameObject);
         }
     }

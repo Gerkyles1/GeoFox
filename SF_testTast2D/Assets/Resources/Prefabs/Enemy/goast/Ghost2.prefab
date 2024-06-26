@@ -653,9 +653,10 @@ MonoBehaviour:
   _moveSpeed: 1
   _attackRange: 1
   _damage: 1
-  _hp: 3
+  _hp: 6
+  _coinsForKill: 2
   _hpBar: {fileID: 5821997094007963080}
-  _ground: {fileID: 0}
+  _ground: {fileID: 2151214178674548808}
 --- !u!1 &7269805665804663135
 GameObject:
   m_ObjectHideFlags: 0
