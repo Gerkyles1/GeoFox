@@ -22,6 +22,7 @@ public class UILearn : MonoBehaviour
             Debug.Log(StartGame._choosedLevel);
             Destroy(gameObject);
         }
+        _learnSlides[0].SetActive(true);
         GetComponent<Button>().onClick.AddListener(ActivateNext);
     }
 

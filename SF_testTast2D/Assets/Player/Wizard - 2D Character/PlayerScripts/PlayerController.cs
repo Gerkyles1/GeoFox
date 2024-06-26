@@ -14,6 +14,8 @@ namespace PlayerScripts
         [SerializeField] private GameObject firePoint;
         [SerializeField] private Slider hpBar;
         [SerializeField] private string _activeSpellAnimatorTriger = "FireBallSpell";
+        [SerializeField] private Button _leftAttack;
+        [SerializeField] private Button _rightAttack;
         public void SetActiveSpellAnimatorTriger(string triger) => _activeSpellAnimatorTriger = triger;
 
 
@@ -27,6 +29,10 @@ namespace PlayerScripts
         {
             _playerAnimator = GetComponent<Animator>();
             EnemyController.EnemyAttackPlayer += TakeDamage;
+            _leftAttack.onClick.AddListener(LeftAttack);
+            _rightAttack.onClick.AddListener(RightAttack);
+
+
         }
         private void Update()
         {
@@ -34,16 +40,26 @@ namespace PlayerScripts
             {
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    SetPlayerDirection(-1);
-                    _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
+                    LeftAttack();
                 }
                 else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    SetPlayerDirection(1);
-                    _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
+                    RightAttack();
                 }
 
             }
+        }
+
+        private void LeftAttack()
+        {
+            SetPlayerDirection(-1);
+            _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
+        }
+
+        private void RightAttack()
+        {
+            SetPlayerDirection(1);
+            _playerAnimator.SetTrigger(_activeSpellAnimatorTriger);
         }
 
         public void SetPlayerDirection(int direction)

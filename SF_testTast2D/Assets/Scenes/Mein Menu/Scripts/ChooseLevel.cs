@@ -1,5 +1,4 @@
 using System;
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +11,24 @@ namespace MeinMenuScripts
         {
             TextMeshProUGUI _childrenTMP = GetComponentInChildren<TextMeshProUGUI>();
             _childrenTMP.text = gameObject.name;
-            Debug.Log("initbutton " + Convert.ToInt16(_childrenTMP.text));
+
+            GetComponent<Button>().interactable = Convert.ToInt16(_childrenTMP.text) <= SavesController.curentMaxLevel;
+
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                GetComponentInParent<StartGame>().StartLevel(Convert.ToInt16(_childrenTMP.text));
+                StartGame.StartLevel(Convert.ToInt16(_childrenTMP.text));
             });
+            SavesController.OnMaxLevelChange += UpdeteLevelButton;
+        }
+
+
+        private void UpdeteLevelButton()
+        {
+            GetComponent<Button>().interactable = Convert.ToInt16(gameObject.name) <= SavesController.curentMaxLevel;
+        }
+        private void OnDestroy()
+        {
+            SavesController.OnMaxLevelChange -= UpdeteLevelButton;
         }
     }
 }

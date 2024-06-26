@@ -44,6 +44,11 @@ namespace EnemyScripts
 
         }
 
+        public bool LevelEnd()
+        {
+            return _currentWaveIndex >= _waves.Count;
+        }
+
 
         public void NewWave()
         {
@@ -55,7 +60,10 @@ namespace EnemyScripts
         public IEnumerator CallWave()
         {
             if (_currentWaveIndex >= _waves.Count)
+            {
+                _waveEnd = true;
                 yield break;
+            }
 
             foreach (EnemyType enemy in _waves[_currentWaveIndex].enemies)
             {

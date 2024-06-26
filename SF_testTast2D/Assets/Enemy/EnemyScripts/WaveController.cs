@@ -9,13 +9,14 @@ namespace EnemyScripts
         public static event Action OnStartNewWave;
 
         [SerializeField] private GameObject _newWaveButton;
+        [SerializeField] private EnemySpawner[] _spawners;
+        public static event Action OnPlayerWin;
 
 
         static public int _enemyCount = 0;
-        private void ResetEnemyCount()=>_enemyCount = 0;
+        private void ResetEnemyCount() => _enemyCount = 0;
 
 
-        [SerializeField] private EnemySpawner[] _spawners;
 
         private void Start()
         {
@@ -39,13 +40,26 @@ namespace EnemyScripts
 
         private void CheckEndWave()
         {
+
             if (_enemyCount == 0)
             {
+
                 foreach (var spawner in _spawners)
                     if (!spawner._waveEnd)
                         return;
 
-                _newWaveButton.SetActive(true);
+                foreach (var spawner in _spawners)
+                    if (!spawner.LevelEnd())
+                    {
+                        _newWaveButton.SetActive(true);
+                        return;
+                    }
+
+                OnPlayerWin?.Invoke();
+
+
+
+
             }
         }
         private void OnDestroy()
