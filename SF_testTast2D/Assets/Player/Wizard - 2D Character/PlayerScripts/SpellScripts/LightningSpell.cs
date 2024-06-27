@@ -13,7 +13,8 @@ namespace Spells
         [SerializeField] private int _damage = 1;
         [SerializeField] private int _speed = 10;
         [SerializeField] private GameObject _effects;
-        private void Reset()
+
+        public void Reset()
         {
             _level = 1;
             _damage = 5;
@@ -71,7 +72,7 @@ namespace Spells
         public override void GetStats(ref string oldStat, ref string newStat)
         {
             oldStat = _damage.ToString();
-            newStat = (_level * 5).ToString();
+            newStat = ((_level+1) * 5).ToString();
 
         }
 

@@ -27,6 +27,7 @@ namespace PlayerScripts
 
         private void Start()
         {
+            _playerAlive = true;
             _playerAnimator = GetComponent<Animator>();
             EnemyController.EnemyAttackPlayer += TakeDamage;
             _leftAttack.onClick.AddListener(LeftAttack);

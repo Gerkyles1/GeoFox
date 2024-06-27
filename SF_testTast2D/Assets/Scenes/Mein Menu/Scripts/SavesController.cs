@@ -62,8 +62,8 @@ namespace MeinMenuScripts
         }
         public void ResetSavedData()
         {
-            PlayerPrefs.SetInt(COINS_COUNT_KEY, 0);
-            PlayerPrefs.SetInt(MAX_LEVEL_KEY, 1);
+            curentMaxLevel = 1;
+            coinsCount = 0;
             Debug.Log("reset");
             PlayerPrefs.Save();
         }

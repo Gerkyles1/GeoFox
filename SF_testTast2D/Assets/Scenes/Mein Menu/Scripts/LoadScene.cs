@@ -1,4 +1,3 @@
-using System.Security;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +10,11 @@ namespace MeinMenuScripts
         private void Start()
         {
             Button button = GetComponent<Button>();
-            button.onClick.AddListener(() => SceneManager.LoadScene(scene));
+            button.onClick.AddListener(() =>
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(scene);
+            });
         }
     }
 }

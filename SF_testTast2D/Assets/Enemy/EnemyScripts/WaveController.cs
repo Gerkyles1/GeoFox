@@ -20,6 +20,7 @@ namespace EnemyScripts
 
         private void Start()
         {
+            _enemyCount = 0;
             EnemyController.OnEnemyDied += DecEnemyCount;
             UIController.SceneReload += ResetEnemyCount;
             InvokeRepeating("CheckEndWave", 2f, 2f);

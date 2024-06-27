@@ -68,19 +68,18 @@ namespace EnemyScripts
             _hpBar.value = _hp;
             if (_hp <= 0)
             {
+                SavesController.coinsCount += _coinsForKill;
                 OnEnemyDied?.Invoke();
                 _enemyAlive = false;
                 _animator.SetTrigger("Die");
                 GetComponent<Collider2D>().enabled = false;
                 GetComponentInChildren<Collider2D>().enabled = false;
-                //_ground.SetActive(false);
             }
         }
 
 
         private void Die()
         {
-            SavesController.coinsCount += _coinsForKill;
             Destroy(gameObject);
         }
     }

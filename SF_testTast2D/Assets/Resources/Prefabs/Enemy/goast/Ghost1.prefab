@@ -377,7 +377,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3754436065234439836
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -439,6 +439,7 @@ MonoBehaviour:
   _attackRange: 1
   _damage: 1
   _hp: 3
+  _coinsForKill: 1
   _hpBar: {fileID: 6822009793856944531}
   _ground: {fileID: 8846868754175606840}
 --- !u!1 &5443483246624244292

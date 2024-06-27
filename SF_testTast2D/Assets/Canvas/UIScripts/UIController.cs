@@ -15,6 +15,7 @@ namespace UIScripts
         [SerializeField] private GameObject _learn;
         [SerializeField] private GameObject _winScreen;
         [SerializeField] private GameObject _loseScreen;
+        [SerializeField] private GameObject _pauseMenu;
         private int _enemyCounter = 0;
 
         public static event Action SceneReload;
@@ -25,6 +26,19 @@ namespace UIScripts
             WaveController.OnPlayerWin += PlayerWin;
             _score.text = "Score: " + _enemyCounter;
             _learn.SetActive(true);
+        }
+
+        public void Pause()
+        {
+            Time.timeScale = 0f;
+            _pauseMenu.SetActive(true);
+        }
+
+        public void Continue()
+        {
+
+            Time.timeScale = 1f;
+            _pauseMenu.SetActive(false);
         }
 
         private void PlayerLose()

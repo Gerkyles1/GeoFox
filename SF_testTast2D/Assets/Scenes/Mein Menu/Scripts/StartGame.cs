@@ -20,5 +20,13 @@ namespace MeinMenuScripts
             else
                 StartLevel(_choosedLevel+1);
         }
+        //public void UpdeteLevelButtonsAcive()
+        //{
+        //    foreach (GameObject button in transform)
+        //    {
+        //        button.GetComponent<ChooseLevel>().UpdeteLevelButton();
+        //    }
+
+        //}
     }
 }

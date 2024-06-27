@@ -10,7 +10,7 @@ namespace Spells
         [SerializeField] private int _damage = 1;
         [SerializeField] private GameObject _fireBallVfx;
         [SerializeField] private int _speed = 10;
-        private void Reset()
+        public void Reset()
         {
             _AnimatorTriger = "FireBallSpell";
             _lifeTime = 1;
@@ -20,7 +20,6 @@ namespace Spells
             _level = 1;
             _damage = 2;
             _speed = 10;
-
         }
 
         void FixedUpdate()
@@ -42,7 +41,9 @@ namespace Spells
                 vfx.transform.position = collision.ClosestPoint(transform.position);
 
                 Destroy(vfx, 1f);
-                Destroy(gameObject);
+
+                if (_level < 5)
+                    Destroy(gameObject);
             }
         }
         public void SetSpellDirection(int direction)
@@ -66,13 +67,13 @@ namespace Spells
         public override void GetStats(ref string oldStat, ref string newStat)
         {
             oldStat = _damage.ToString();
-            newStat = (_level * 2).ToString();
+            newStat = ((_level + 1) * 2).ToString();
 
         }
 
         public override void UpgrateSpell()
         {
-            
+
             _level++;
             _damage = _level * 2;
             return;

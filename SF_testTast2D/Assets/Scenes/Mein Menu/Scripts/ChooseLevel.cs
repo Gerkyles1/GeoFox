@@ -22,7 +22,7 @@ namespace MeinMenuScripts
         }
 
 
-        private void UpdeteLevelButton()
+        public void UpdeteLevelButton()
         {
             GetComponent<Button>().interactable = Convert.ToInt16(gameObject.name) <= SavesController.curentMaxLevel;
         }

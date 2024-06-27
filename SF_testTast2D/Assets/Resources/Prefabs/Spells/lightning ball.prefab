@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AnimatorTriger: LightningSpell
-  _lifeTime: 2
+  _lifeTime: 3
   _level: 1
   _costScale: 10
   _nameStatToUpgrade: Damage

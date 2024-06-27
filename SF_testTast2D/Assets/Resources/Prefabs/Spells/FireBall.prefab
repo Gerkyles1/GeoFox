@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AnimatorTriger: FireBallSpell
-  _lifeTime: 1
+  _lifeTime: 3
   _level: 1
   _costScale: 5
   _nameStatToUpgrade: Damage
