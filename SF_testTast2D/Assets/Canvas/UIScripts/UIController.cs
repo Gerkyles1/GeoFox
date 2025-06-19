@@ -17,6 +17,7 @@ namespace UIScripts
         [SerializeField] private GameObject _loseScreen;
         [SerializeField] private GameObject _pauseMenu;
         private int _enemyCounter = 0;
+        private bool showAd = true;
 
         public static event Action SceneReload;
         void Start()
@@ -43,6 +44,11 @@ namespace UIScripts
 
         private void PlayerLose()
         {
+            if (showAd)
+            {
+                AdsManager.Instance.interstitialAds.ShowInterstitialAd();
+                showAd = false;
+            }
             _endLevelScreen.SetActive(true);
             _loseScreen.SetActive(true);
 
@@ -51,6 +57,12 @@ namespace UIScripts
 
         private void PlayerWin()
         {
+            if (showAd)
+            {
+                AdsManager.Instance.interstitialAds.ShowInterstitialAd();
+                showAd = false;
+            }
+
             SavesController.curentMaxLevel += (SavesController.curentMaxLevel == StartGame._choosedLevel ? 1 : 0);
 
             _endLevelScreen.SetActive(true);
